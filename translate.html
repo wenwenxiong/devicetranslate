@@ -1,0 +1,96 @@
+<head>
+    <meta charset="UTF-8">
+    <title>edgex translate - edgex device translate to kubeedge</title>
+    <link rel="stylesheet" href="static/css/spectre.min.css">
+    <link rel="stylesheet" href="static/css/j2-render.css">
+    <script src="static/js/jquery-3.5.1.min.js"></script>
+    <script src="static/js/clipboard.min.js"></script>
+    <script src="static/js/j2-render.js?version=12514"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-91431117-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <meta name="description" content="Online Jinja2 parser and renderer providing live results for Jinja template rendering.">
+    <link rel="icon" type="image/png" href="static/img/favicon-32.png" sizes="32x32">
+</head>
+<body>
+<div class="container">
+    <div class="columns flex-centered bg-gray">
+        <div class="column col-xl-12 col-10 text-center title-p">
+            <div class="twitter-icon"><a href="https://twitter.com/ttl255" target="_blank">
+                <img src="static/img/twitter_icon.png" alt="@ttl255">
+                </a>
+            </div>
+            <kbd class="h4">Translate</kbd>
+            <span>
+            edgex device translate to kubeedge device crd
+            </span>
+        </div>
+    </div>
+    
+    <div class="columns pt-2">
+        <div class="column col-xl-6 col-5 col-ml-auto">
+            <label class="form-label" for="j2_template"><span class="h5 text-bold">Edgex Device Profile</span>
+                <span class="label label-rounded label-secondary tooltip"
+                      data-tooltip="Both YAML and JSON supported">?</span>
+            </label>
+            <textarea class="form-input j2-template" id="j2_template" placeholder="Your Device Profile yaml"
+                      name="j2_template" spellcheck="false"></textarea>
+            <label class="form-label" for="j2_data">
+                <span class="h5 text-bold">Edgex Device </span>
+                <span class="label label-rounded label-secondary tooltip"
+                      data-tooltip="Both YAML and JSON supported">?</span>
+            </label>
+            <textarea class="form-input j2-data" id="j2_data" placeholder="edgex device yaml"
+                      name="j2_data" spellcheck="false"></textarea>
+            <div class="divider"></div>
+            <div class="columns">
+                <div class="column col-6">
+                    <div class="form-group">
+                    </div>
+                </div>
+                <div class="column col-6">
+                </div>
+            </div>
+        </div>
+        <div class="column col-xl-6 col-5 col-mr-auto">
+            <label class="form-label" for="render_results"><span class="h5 text-bold">KubeEdge Device CRD</span>
+                <span class="label label-rounded label-secondary tooltip"
+                      data-tooltip="Text of kubeedge devicemodel deviceinstance will appear here">?</span>
+            </label>
+            <div class="template-render column" id="render_results"></div>
+            <div class="divider"></div>
+            <div class="columns">
+                <div class="column col-6">
+                    <button class="btn btn-primary" id="request_render">Translate</button>
+                    <button class="btn" data-clipboard-target="#render_results"
+                            id="clip_copy" data-tooltip="Copied to clipboard">Copy
+                    </button>
+                </div>
+                <div class="column col-6">
+                    <div class="form-group float-right">
+                        <label class="form-switch form-inline">
+                            <input type="checkbox" id="toggle_whitespaces">
+                            <i class="form-icon"></i> Show whitespaces
+                            <span class="label label-rounded label-secondary tooltip tooltip-left"
+                      data-tooltip="Shows non-printable characters">?</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="columns">
+                <div class="column col-6">
+                    <p></p>
+                    <button class="btn" id="reset_render">Clear render</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>

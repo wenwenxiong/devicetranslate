@@ -1,0 +1,80 @@
+textarea.j2-template {
+    min-height: 15.00em;
+}
+
+textarea.j2-data {
+    min-height: 17.00em;
+    white-space: pre;
+    font-family: monospace;
+    font-size: 0.9em;
+}
+
+div.title-p {
+    padding-bottom: 1em;
+    padding-top: 1em;
+}
+
+div.twitter-icon {
+    position: relative;
+    vertical-align: middle;
+    height: 1.9em;
+    width: 1.9em;
+    float: left;
+    line-height: 1.25;
+}
+
+div.twitter-icon img {
+    height: 100%;
+    position: relative;
+    width: 100%;
+    border-radius: 50%;
+    z-index: 1
+}
+
+div.template-render {
+    border-color: #bcc3ce;
+    border-radius: 0.1em;
+    border-style: solid;
+    border-width: .065em;
+    height: 32.65em;
+    padding: .25em .4em;
+    white-space: pre;
+    overflow: auto;
+}
+
+span.ws_space, span.ws_tab, span.ws_newline {
+    display: inline-block;
+    position: relative;
+    padding-left: 0.05em;
+    padding-right: 0.05em;
+}
+
+span.ws_newline {
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10+ and Edge */
+    user-select: none; /* Standard syntax */
+}
+
+span.ws_space.ws_vis:after {
+    content: '\002022';
+    position: absolute;
+    color: #bbb;
+    top: 0;
+    left: 0;
+}
+
+span.ws_tab.ws_vis:after {
+    content: '\0021E5';
+    position: absolute;
+    color: #bbb;
+    top: 0;
+    left: 0;
+}
+
+span.ws_newline.ws_vis:after {
+    content: '\0021B5';
+    position: absolute;
+    color: #bbb;
+    top: 0;
+    left: 0;
+}
