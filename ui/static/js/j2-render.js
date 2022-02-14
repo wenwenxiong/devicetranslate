@@ -40,24 +40,25 @@ function request_render(event) {
         }
     });
 
-    let render_mode = $("input[name='render_mode']:checked").val();
+    //let render_mode = $("input[name='render_mode']:checked").val();
 
     let render_data = {
         template: j2_template,
         data: j2_data,
-        options: render_options,
+        /*options: render_options,
         filters: additional_filters,
-        render_mode: render_mode
+        render_mode: render_mode*/
     };
 
     $.ajax({
         type: 'POST',
-        url: '/device-translate',
+        url: 'http://127.0.0.1:8080/device-translate',
         data: JSON.stringify(render_data),
         contentType: 'application/json',
-        dataType: 'json',
+     //   dataType: 'yaml',
     }).done(function (reply) {
-        let rendered_template = reply['render_result'];
+        //let rendered_template = reply['render_result'];
+        let rendered_template = reply;
         let rendered_html = classify_whitespaces(rendered_template);
         let render_body = document.getElementById('render_results');
         if (render_body.firstChild) {
@@ -67,8 +68,12 @@ function request_render(event) {
         }
         toggle_whitespaces();
         copy_tooltip("off");
-    }).fail(function () {
-        alert("I'm so sorry, did not get reply from server.");
+    }).fail(function (e) {
+        //alert("I'm so sorry, did not get reply from server.");
+        alert(e.responseText)
+        alert(e.readyState)
+        alert(e.status)
+        alert(e.statusText)
     });
 }
 
