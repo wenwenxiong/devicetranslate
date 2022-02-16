@@ -16,10 +16,10 @@
 
 ### 目录说明
 
-ui：简单的前端界面
-middleware：web访问跨域处理
-model：edgex device deviceprofile数据结构，中转的kubeedge devicemodel 数据结构
-v1alpha2： 生成kubeedge crd的devicemodel，deviceinstance定义
+* ui：简单的前端界面
+* middleware：web访问跨域处理
+* model：edgex device deviceprofile数据结构，中转的kubeedge devicemodel 数据结构
+* v1alpha2： 生成kubeedge crd的devicemodel，deviceinstance定义
 
 ### 运行程序
 首先，运行后端golang程序，步骤如下
@@ -30,7 +30,7 @@ go mod tiry
 go run main.go
 ```
 运行前端程序
-用浏览器打开ui文件夹下translate.html文件即可
+用浏览器打开ui文件夹下translate.html文件即可<br>
 输入edgex的device profile和device，点击Translate按钮，即可生成kubeedge的devicemodel，deviceinstance的yaml资源格式。
 
 运行效果
